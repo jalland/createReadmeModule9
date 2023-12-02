@@ -15,7 +15,6 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    const data = `test`;
     inquirer
       .prompt([
         {
@@ -28,6 +27,43 @@ function init() {
           name: 'projectDescription',
           message: questions[1],
         },
+        {
+            type: 'input',
+            name: 'install',
+            message: questions[2],
+          },
+          {
+            type: 'input',
+            name: 'usage',
+            message: questions[3],
+          },
+          {
+            type: 'input',
+            name: 'contribution',
+            message: questions[4],
+          },
+          {
+            type: 'input',
+            name: 'testInstructions',
+            message: questions[5],
+          },
+          {
+            type: 'list',
+            name: 'license',
+            message: questions[6],
+            choices: ["MIT","Apache","Boost",""]
+
+          },
+          {
+            type: 'input',
+            name: 'githubUsername',
+            message: questions[7],
+          },
+          {
+            type: 'input',
+            name: 'email',
+            message: questions[8],
+          },
       ])
       .then((response) => {
         console.log(response);
